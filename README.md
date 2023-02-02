@@ -1,2 +1,2 @@
 # oreDigital
-All mining activities monitoring system
+All mining activities monitoring tool
