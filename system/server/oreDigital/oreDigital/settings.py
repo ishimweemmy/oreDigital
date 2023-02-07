@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'incidents'
 ]
 
 MIDDLEWARE = [
@@ -71,11 +72,16 @@ WSGI_APPLICATION = 'oreDigital.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+# BASE_DIR / 'db.mysql'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'oreDigital',
+        'USER': 'django',
+        'PASSWORD': 'django-ishimwe@2005.',
+        'HOST': 'localhost',
+        'PORT': '3306'
     }
 }
 
