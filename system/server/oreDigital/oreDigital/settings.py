@@ -52,10 +52,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-SWAGGER_SETTINGS = {
-   'DEFAULT_INFO': 'import.path.to.urls.api_info',
-}
-
 ROOT_URLCONF = 'oreDigital.urls'
 
 TEMPLATES = [
