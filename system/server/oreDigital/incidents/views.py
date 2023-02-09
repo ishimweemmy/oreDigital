@@ -25,6 +25,8 @@ def incidents_list(request):
         if serializer.is_valid():
             serializer.save()
             return Response({"message": "uploaded successfully", "data": serializer.data}, status=status.HTTP_201_CREATED)
+        else:
+            return Response({"message": "Invalid credentials"}, status=status.HTTP_403_FORBIDDEN)
 
 
 # GET OR DELETE A SINGLE INCIDENT BY ID (in this case by using a uuid)
