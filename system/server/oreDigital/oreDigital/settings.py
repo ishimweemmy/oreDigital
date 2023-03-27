@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -80,11 +84,11 @@ WSGI_APPLICATION = 'oreDigital.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'oreDigital',
-        'USER': 'django',
-        'PASSWORD': 'django-ishimwe@2005.',
-        'HOST': 'localhost',
-        'PORT': '3306'
+        'NAME': env('OREDIGITAL_DB_NAME'),
+        'USER': env('OREDIGITAL_DB_USER'),
+        'PASSWORD': env('OREDIGITAL_DB_PASSWORD'),
+        'HOST': env('OREDIGITAL_DB_HOST'),
+        'PORT': env('OREDIGITAL_DB_PORT')
     }
 }
 
